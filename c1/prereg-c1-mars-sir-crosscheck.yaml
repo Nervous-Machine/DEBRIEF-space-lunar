@@ -1,0 +1,135 @@
+# Lunar cross-check c1 — do the two Mars stream interfaces show up at the Moon?
+#
+# Written 2026-10-18 BEFORE any CRaTER or OMNI byte for 2024 is read.
+# Only inputs used so far: the Mars run ledger (arrival times, cycles 13
+# and 15) and JPL Horizons positions (results/geometry.json, geometry.py).
+# One CRaTER L2 SEC file (2024-047) was downloaded to read its column
+# layout; its count values were not analysed. The folder is not a git repo, so
+# this file's sha256 is recorded in prereg.sha256 at write time.
+#
+# WHY: the two arrivals were discovered at Mars (Feb 16 and Jun 13, 2024)
+# and classified as stream interfaces (SIR/HSS) from MAVEN plasma + MAG.
+# Stream interfaces corotate and last weeks, so Earth/Moon should have met
+# each one, displaced by the longitude gap. The lunar campaign (Aug 2026)
+# searched CRaTER for dose SPIKES and never looked at these dates. A
+# stream interface should instead cause a small DIP in cosmic-ray rates.
+#
+# GEOMETRY (results/geometry.json; ballistic corotation, 25.38 d sidereal,
+# V = 300/360/450 km/s — spread <= 0.5 d, so 360 km/s is used):
+#   feb_2024: Mars 138.5 deg ahead of Earth, r = 1.43 AU
+#     M1 = 2024-02-03T04  (Moon meets it 12.8 d BEFORE Mars)
+#     M2 = 2024-03-01T13  (one rotation later, 14.6 d AFTER Mars)
+#   jun_2024: Mars 96.4 deg ahead of Earth, r = 1.39 AU
+#     M3 = 2024-06-04T04  (9.2 d BEFORE Mars)
+#     M4 = 2024-07-01T10  (18.0 d AFTER Mars)
+#
+# DECLARED LIMITS (before data):
+#   - Ballistic mapping ignores stream evolution, latitude offsets and
+#     interaction regions steepening; +/-2 day timing error is expected.
+#   - 2024 is near solar max: stream interfaces recur every ~27 days and
+#     several exist per rotation. A hit near a predicted date is therefore
+#     WEAK evidence on its own; every test reports its base rate over all
+#     days of the window (below). Without the base rate, no claim.
+#   - Solar particle events RAISE counts and can hide a dip. Known lunar
+#     SEP episodes in this window (lunar campaign): Mar 15-18, May 9-20s,
+#     Jun 8-10. None overlap a meeting window as registered.
+#   - CRaTER counts are not dose. Rates are a GCR-access proxy only.
+
+crosscheck:
+  id: lunar-c1-mars-sir-crosscheck
+  window: 2024-01-10 -> 2024-07-20   # covers all meetings + baselines
+  meetings:
+    M1: { arrival: feb_2024, utc: "2024-02-03T04:00" }
+    M2: { arrival: feb_2024, utc: "2024-03-01T13:00" }
+    M3: { arrival: jun_2024, utc: "2024-06-04T04:00" }
+    M4: { arrival: jun_2024, utc: "2024-07-01T10:00" }
+
+  # ── Test A: does Earth's solar wind (OMNI) show a stream interface? ────
+  test_a_omni:
+    source: OMNI2 hourly, SPDF low_res_omni/omni2_2024.dat
+    search_window: meeting -2 d .. meeting +2 d
+    baseline: median over meeting -5 d .. meeting -2 d
+    fires_if: >
+      6-h running median speed >= baseline + 80 km/s at some hour in the
+      search window, AND within 24 h of that hour the 6-h median |B| or
+      flow pressure reaches >= 2.0x its baseline.  (Mars c13/c15 criteria
+      carried over verbatim; |B| added as the alternative to pressure as
+      in c15.)
+    base_rate: >
+      the same rule applied with every day 2024-01-15 .. 2024-07-15 as a
+      pseudo-meeting; report the fraction of pseudo-meetings that fire.
+    predictions:
+      PA1: at least one of M1/M2 fires (Feb structure reached Earth)
+      PA2: at least one of M3/M4 fires (Jun structure reached Earth)
+    null_branch: >
+      neither meeting fires for an arrival -> that structure was not seen
+      at Earth's longitude within +/-2 d of the ballistic prediction; the
+      "Earth-blind" reading stands for it, and Test B is reported as
+      context only for that arrival.
+
+  # ── Test B: does the Moon (CRaTER) show a cosmic-ray dip? ──────────────
+  test_b_crater:
+    source: LRO CRaTER PDS4 bundle lro.crater v2.4, data-der-sec (L2 SEC)
+    rate: >
+      daily mean of GOOD (valid coincidence events per second) — penetrating
+      particles, GCR-dominated outside SEPs. Secondary, reported not scored:
+      daily mean of SINGLE 2+4+6 (thick detectors).
+    quality: >
+      drop seconds with fill values (>= 4294967295) or GOOD < 0; drop days
+      with < 70,000 valid seconds (81% coverage); record every drop.
+    sep_flag: >
+      day flagged SEP if daily mean SINGLE 1 (thin, shallowest) >= 1.5x its
+      window median. Flagged days are excluded from baselines; a meeting
+      whose dip window is >= 50% flagged is INDETERMINATE.
+    dip_window: meeting -1 d .. meeting +3 d  (GCR minimum lags the
+      interface by ~0-2 d)
+    baseline: median daily GOOD over meeting -9 d .. meeting -3 d
+    statistic: D = (min daily GOOD in dip_window - baseline) / baseline
+    null_distribution: >
+      D computed for every day 2024-01-20 .. 2024-07-15 as a pseudo-meeting
+      (SEP-indeterminate ones dropped). Dip = D at or below the 10th
+      percentile of that distribution.
+    predictions:
+      PB1: every meeting where Test A fires shows a dip
+      PB2: |D| at those meetings is a few percent (0.5-5%), not tens
+    null_branch: >
+      Test A fires but no dip -> report the bound: GCR suppression at the
+      Moon was smaller than the 10th-percentile |D| for that structure.
+
+  claims_rule: >
+    "Same structure seen at Mars and at the Moon" may be stated only for an
+    arrival where Test A fires AND Test B dips at the same meeting, with
+    both base rates printed beside it. Anything else is reported as what
+    it is. Internal record only; no public copy (Mars cycles 10-16 on hold).
+
+# ── PRE-SCORING ERRATUM 1 (2026-10-18, BEFORE any count is aggregated) ─────
+# The label (CRAT_L2_SEC_2024047_V01.xml) shows MASK 1/2 are a 64-bit
+# coincidence ACCEPT mask (all ones = accept all), not fill. Read literally,
+# "drop seconds with fill values" would drop every second. AMENDED quality
+# rule: the fill check (>= 4294967295) applies only to the count fields used
+# (SINGLE 1-6, GOOD). A second is also dropped unless BIASCNTRL = 1 and all
+# six PROCDFLAG = 1. Discriminator settings (DISCTHIN, DISCTHICK) and the
+# MASK value are recorded per day; a day whose settings differ from the
+# window's modal setting is dropped and listed (an instrument-configuration
+# change would move rates for reasons unrelated to the Sun). Daily mean LRO
+# altitude (|MOONVEC| - 1737.4 km) is recorded as a covariate and reported,
+# not used in scoring.
+
+# ── PRE-SCORING ERRATUM 2 (2026-10-18, BEFORE any OMNI value is examined
+#    and before CRaTER finishes downloading) ─────────────────────────────
+# Fixes details the registration left open. No statistic computed yet.
+#  Test A: "6-h median" = trailing 6-h median ending at the hour, needing
+#    >= 4 valid hours. Baselines = median of valid hourly values. Speed
+#    criterion = first hour in the search window meeting it; companion
+#    criterion = any hour within +/-24 h of it (may fall just outside the
+#    search window). OMNI word 9 (|B| average), 25 (speed), 29 (pressure);
+#    fills 999.9 / 9999. / 99.99 treated as missing. Pseudo-meetings for
+#    the base rate are placed at 00 UT each day.
+#  Test B: dip-window and baseline days are calendar days (UTC) containing
+#    meeting-1d .. meeting+3d and meeting-9d .. meeting-3d. Days dropped by
+#    the quality or settings rule count as unusable, like SEP-flagged days.
+#    INDETERMINATE if < 3 usable dip-window days or < 4 usable baseline
+#    days (replaces the ">= 50% flagged" wording, same intent). Pseudo-
+#    meetings at 00 UT each day 2024-01-20 .. 2024-07-15. Each meeting's
+#    percentile rank in the null distribution is reported as well as the
+#    dip/no-dip call.

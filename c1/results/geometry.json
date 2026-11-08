@@ -1,0 +1,83 @@
+{
+  "model": "ballistic corotation, sidereal 25.38 d, radial constant V",
+  "source": "JPL Horizons vectors, heliocentric ecliptic J2000",
+  "generated_utc": "2026-10-18T07:50:48+00:00",
+  "arrivals": {
+    "feb_2024": {
+      "mars_arrival_utc": "2024-02-16T00:00:00",
+      "mars_r_au": 1.426,
+      "earth_r_au": 0.988,
+      "mars_minus_earth_longitude_deg": 138.5,
+      "earth_meetings": {
+        "300_km_s": [
+          {
+            "utc": "2024-02-02T17:00",
+            "days_from_mars_arrival": -13.3
+          },
+          {
+            "utc": "2024-03-01T02:00",
+            "days_from_mars_arrival": 14.1
+          }
+        ],
+        "360_km_s": [
+          {
+            "utc": "2024-02-03T04:00",
+            "days_from_mars_arrival": -12.8
+          },
+          {
+            "utc": "2024-03-01T13:00",
+            "days_from_mars_arrival": 14.6
+          }
+        ],
+        "450_km_s": [
+          {
+            "utc": "2024-02-03T15:00",
+            "days_from_mars_arrival": -12.3
+          },
+          {
+            "utc": "2024-03-02T00:00",
+            "days_from_mars_arrival": 15.0
+          }
+        ]
+      }
+    },
+    "jun_2024": {
+      "mars_arrival_utc": "2024-06-13T10:00:00",
+      "mars_r_au": 1.39,
+      "earth_r_au": 1.016,
+      "mars_minus_earth_longitude_deg": 96.4,
+      "earth_meetings": {
+        "300_km_s": [
+          {
+            "utc": "2024-06-03T19:00",
+            "days_from_mars_arrival": -9.6
+          },
+          {
+            "utc": "2024-07-01T00:00",
+            "days_from_mars_arrival": 17.6
+          }
+        ],
+        "360_km_s": [
+          {
+            "utc": "2024-06-04T04:00",
+            "days_from_mars_arrival": -9.2
+          },
+          {
+            "utc": "2024-07-01T10:00",
+            "days_from_mars_arrival": 18.0
+          }
+        ],
+        "450_km_s": [
+          {
+            "utc": "2024-06-04T13:00",
+            "days_from_mars_arrival": -8.8
+          },
+          {
+            "utc": "2024-07-01T19:00",
+            "days_from_mars_arrival": 18.4
+          }
+        ]
+      }
+    }
+  }
+}

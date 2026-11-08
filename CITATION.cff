@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: "DEBRIEF-space-lunar: lunar-orbit radiation learning campaign and the Mars-to-Moon stream-interface cross-check"
+message: "Cite this record by version. Contributors of record are listed as authors; each is credited for the cycles they contributed."
+type: dataset
+version: 0.1.0
+date-released: 2026-11-08
+license: CC-BY-4.0
+repository-code: https://github.com/Nervous-Machine/DEBRIEF-space-lunar
+authors:
+  - family-names: Bennett
+    given-names: Heidi
+    affiliation: Nervous Machine
+    # campaign (August 2026) and cycle 1 (2026-10-18), with Claude Code as the operating agent

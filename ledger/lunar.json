@@ -1,0 +1,1040 @@
+{
+ "missions": [
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "title": "Lunar radiation campaign (lunar orbit), built on the Mars structure",
+   "kind": "learning",
+   "protocol_version": "0.1.0",
+   "pods": [
+    "nm-usecases/lunar",
+    "nm-usecases/lunar-native",
+    "nm-usecases/lunar-regime",
+    "nm-usecases/lunar-fm"
+   ],
+   "began": "2026-08-10",
+   "status": "active",
+   "record_quality": "reconstructed",
+   "record_note": "The cycle-by-cycle run reports for this campaign were lost with a laptop. This debrief is rebuilt from what survives: the campaign's published summaries, two published figures with their data, and the stored model records from August 2026. The stored model records hold more than numbers: each relationship carries the cycle it was admitted in, the admission statistic, the prediction registered for it, and what was learned. So for this mission you can say which hypotheses were tried, which cycle admitted or refuted each one, and with what numbers. What you cannot give is the reasoning text of each cycle. If someone asks for that, say the run reports are not available for this mission.",
+   "scope_limits": [
+    "Lunar orbit only. No lunar surface measurements."
+   ],
+   "record_limits": [
+    "No run reports: cycle numbers, admission statistics and registered predictions come from the stored model records; the reasoning text of each cycle is lost."
+   ],
+   "opening": {
+    "spoken": "The lunar radiation campaign, which took what was learned at Mars and pointed it at the Moon."
+   },
+   "short_version": {
+    "spoken": "In August 2026 the system took the structure it had learned at Mars and pointed it at the Moon. It did not start from nothing: it carried over which drivers matter, and it wrote down in advance one thing it expected to flip. At Mars the atmosphere soaks up solar particle events and surface dose goes down. The Moon has no atmosphere, so the prediction was that the same events would push dose up. That is what the lunar data showed. Same Sun, opposite signs, ordered by shielding.\n\nThe data is dose in lunar orbit from the CRaTER instrument on the Lunar Reconnaissance Orbiter, seventeen years of it.\n\nThe headline finding is about warnings. In the first half of 2024 the system found three episodes where dose at the Moon rose by large factors while Earth's official solar-event catalog had nothing. Each was missed in a different way, and each was confirmed by an independent spacecraft in lunar orbit.\n\nWhat is open: the Earth's magnetotail seems to affect lunar dose in the opposite direction to the textbook, and that is unexplained. And nothing here comes from the surface.\n\nWhat is needed: access to the one surface dataset that exists, and monitoring near the Moon instead of relying on Earth-side alerts."
+   },
+   "what_happened": {
+    "spoken": "The lunar model was seeded on August 10, 2026, from the Mars structure. The proton-event relationship was registered with its sign reversed against Mars, with the stated reason: no atmospheric column, so prompt particle enhancement dominates. The model was split by where the Moon is: in the solar wind, or inside Earth's magnetotail. Four versions followed. The first ran seven loop cycles on dose in physical units. The second, the same evening, re-based the model on the logarithm of dose and ran ten cycles. The third split the hours into storm and quiet and ran eight. A fourth, a week later on August 17, re-seeded the whole structure and ran two cycles. Across the four, the same drivers kept being admitted: proton flux, the recovery pattern after events, depth inside the magnetotail, and solar activity. The stored records also hold three counts and measurements that were not hypothesis tests. Counting the same way across seventeen years, sixty quiet-day radiation bursts were found, and forty-four of them fall in 2023 to 2025; the year 2012, loud by Earth standards, has none. The instrument's three detector pairs behaved coherently in each of the three missed episodes, which separates soft events from penetrating ones and rules out an instrument fault. At its peak on June 8, 2024, the shallow channel read about eleven hundred times its baseline. These are stated from the published summary and the figures."
+   },
+   "implications": {
+    "rely_on": [
+     {
+      "spoken": "particle events hit the Moon at full strength, and they can be large when Earth's catalog is silent.",
+      "finding_ids": [
+       "F1",
+       "F2"
+      ],
+      "audience": "briefing"
+     }
+    ],
+    "do_not_rely_on": [
+     {
+      "spoken": "Earth-side alerts alone for decisions near the Moon. The campaign's own summary is that anyone operating near the Moon needs lunar-vicinity monitoring.",
+      "finding_ids": [
+       "F2"
+      ],
+      "audience": "briefing"
+     },
+     {
+      "spoken": "geomagnetic indices as controls in the solar wind; they learned weight where they were expected to abstain, and why is not settled.",
+      "finding_ids": [
+       "F7"
+      ],
+      "audience": "internal"
+     }
+    ],
+    "stop": [],
+    "new": [
+     {
+      "spoken": "the steady background from galactic cosmic rays is a construction problem, because lunar soil is available as shielding. The acute problem is warning time, because surface work has to stop and people have to reach shelter.",
+      "finding_ids": [],
+      "audience": "briefing"
+     }
+    ]
+   },
+   "day_zero": {
+    "spoken": "A lunar base starts with no surface data. What the system would bring on day zero is this.\n\nWhat carries over: the structure. Which drivers to watch, the split between solar wind and magnetotail, the split between storm and quiet hours, and the expectation that particle events raise dose.\n\nWhat is unknown: every relationship at the surface. Each would start at its seed value with no certainty, and would have to be learned from the base's own instruments.\n\nWhat to measure first: a dosimeter at the surface, read hourly. Monitoring near the Moon that does not depend on Earth's catalog. Coverage of magnetotail passes during storms, which the orbital record barely has."
+   },
+   "certainty_statement": {
+    "spoken": "Certainty is set aside for this mission. The first three versions show certainty collapsing on every relationship, as at Mars. The fourth version, under a new scale, shows several relationships at or near the ceiling of certainty. Those values are not reported, because a correct scale is not supposed to let certainty reach its ceiling, and the rule that sets the scale is being worked out. Say what was found and what confirmed it."
+   },
+   "sources": [
+    {
+     "kind": "published_page",
+     "ref": "Atlas of Useful Space: Moon and Mars"
+    },
+    {
+     "kind": "figure",
+     "ref": "Three Ways to Miss the Moon"
+    },
+    {
+     "kind": "figure",
+     "ref": "Two Channels, Three Worlds"
+    },
+    {
+     "kind": "model_records",
+     "ref": "nm.edges pods nm-usecases/lunar*"
+    }
+   ],
+   "internal_prose": [
+    "which is why the campaign registered them as controls outside the magnetotail",
+    "The system also got one thing wrong, on the record: two geomagnetic indices it registered as controls, expected to learn nothing in the solar wind, learned weight anyway, in three rounds of testing.",
+    "under a new scale",
+    "surviving"
+   ]
+  }
+ ],
+ "cycles": [
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "cycle": 1,
+   "dated": "2026-10-18",
+   "by": "Nervous Machine (Heidi Bennett; Claude Code as the operating agent)",
+   "kind": "learning",
+   "audience": "briefing",
+   "preregistered": {
+    "question": "Did the two 2024 solar-wind stream interfaces found at Mars reach the Moon, at the meetings predicted by corotation?",
+    "rule": "Test A: Earth's solar wind (OMNI) shows a speed step of at least eighty kilometres per second with a doubling of field or pressure within a day, inside two days of the predicted meeting. Test B: the Moon's cosmic-ray rate (CRaTER) dips to the bottom tenth of a null distribution within minus one to plus three days. 'Same structure seen at Mars and at the Moon' may be said only where A fires and B dips at the same meeting, with both base rates printed beside it.",
+    "predictions": [
+     "PA1: the February structure reached Earth (M1 or M2 fires)",
+     "PA2: the June structure reached Earth (M3 or M4 fires)",
+     "PB1: every meeting where A fires shows a dip",
+     "PB2: dips are a few percent, half to five"
+    ],
+    "commit": "c1/prereg-c1-mars-sir-crosscheck.yaml",
+    "results": [
+     "c1/results/c1_scored.json",
+     "c1/results/c1_report.md"
+    ],
+    "before_data": true
+   },
+   "outcome": {
+    "verdict": "mixed",
+    "numbers": {
+     "meetings_predicted": {
+      "M1": "2024-02-03T04",
+      "M2": "2024-03-01T13",
+      "M3": "2024-06-04T04",
+      "M4": "2024-07-01T10"
+     },
+     "test_a_fires": {
+      "M1": false,
+      "M2": false,
+      "M3": true,
+      "M4": "weak"
+     },
+     "test_a_base_rate": 0.36,
+     "test_b_dip_pct": {
+      "M2": -1.9,
+      "M3": -9.4,
+      "M4": -1.6
+     },
+     "test_b_percentile": {
+      "M2": 39,
+      "M3": 1.3,
+      "M4": 44
+     },
+     "test_b_base_rate": 0.1,
+     "m3_baseline_confound": "late-May solar particle event tail in the baseline days",
+     "post_hoc_june_low_pct": "-4 to -6 (flagged post hoc)",
+     "m4_suppression_bound_pct": 4.6,
+     "pds_days_missing": [
+      "2024-06-19",
+      "2024-06-20"
+     ]
+    },
+    "misses": [
+     "PA1 failed: the February structure was not seen at Earth's longitude at either meeting; the Earth-blind reading stands for it.",
+     "PB2 failed at M3: the dip was nine percent, larger than the registered half-to-five percent range, with the baseline sitting in a solar-particle-event tail that the registered flag did not catch."
+    ]
+   },
+   "spoken": "On October eighteenth, under a rule written before any 2024 solar-wind or cosmic-ray byte was read, Nervous Machine asked whether the two stream interfaces found at Mars in 2024 had also reached the Moon. The February one was not seen at Earth's longitude at either predicted meeting. The June one met the rule at one meeting: Earth's solar wind stepped up on June fourth, and the Moon's cosmic-ray rate dipped at the same time, in the bottom two percent of the null distribution. The base rates are thirty six percent for the solar-wind test and ten percent for the dip, so a random meeting passes both about four percent of the time. That makes it suggestive, not strong. One confound travels with it: the baseline days sat in the tail of a late-May particle event, which inflates the dip. A second cycle with a better particle flag is specified and open to anyone with the public data.",
+   "finding_ids": [],
+   "gap_ids": [
+    "G8"
+   ]
+  }
+ ],
+ "findings": [
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "finding_id": "F1",
+   "kind": "learned",
+   "spoken": "Solar particle events raise dose at the Moon and lower it at the surface of Mars. The sign flip was registered before the lunar data was used, and the learned weight came out positive in both the solar wind and the magnetotail, at the top of its range.",
+   "evidence": {
+    "numbers": {
+     "weights": {
+      "solar_wind": 1.0,
+      "magnetotail": 1.0
+     },
+     "seeded_at": "2026-08-10T17:58:31Z"
+    },
+    "cycles": [
+     "v1 seed"
+    ],
+    "confirmed_by": []
+   },
+   "standing": {
+    "status": "accepted",
+    "basis": "sign flip registered before the lunar data was used; learned weight positive in both regions (stored model record)",
+    "note": "weight at the top of its range in both regions"
+   },
+   "certainty": {
+    "earned": false,
+    "note": "set aside: versions one to three show certainty collapsing on every relationship; version four (lunar-fm) shows values at the ceiling, which a correct scale is not supposed to produce, and the scale rule is being worked out"
+   },
+   "edge_refs": [
+    {
+     "pod": "nm-usecases/lunar",
+     "edge_id": "sep_proton|solar_wind__surface_corrected_dose_rate__surface_corrected_dose_rate@solar_wind"
+    },
+    {
+     "pod": "nm-usecases/lunar",
+     "edge_id": "sep_proton|magnetotail__surface_corrected_dose_rate__surface_corrected_dose_rate@magnetotail"
+    }
+   ],
+   "audience": "briefing"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "finding_id": "F2",
+   "kind": "discovery",
+   "spoken": "Earth's alerts are not enough at the Moon. Between January 10 and July 7, 2024, three dose episodes at the Moon are missing from the official solar proton event catalog. The first, March 15 to 18, was missed by threshold. Dose at the Moon stayed at least four times normal for four days, peaking at about forty times normal on March 16. The proton measure the catalog watches only grazed its alert line and fell back, so nothing was recorded. The ARTEMIS spacecraft in lunar orbit saw it directly, at about three times background. The second, May 9, was missed by latency. Dose rose at the Moon a full day before the catalog opened an event. The first electrons arrived ahead of the protons the catalog watches. ARTEMIS read about two hundred times background while Earth-side protons read under one particle flux unit. The third, June 8 to 10, was missed by curation. These were the highest dose days of the whole window, around one hundred and forty-eight thousand micrograys per day on June 8, against a quiet level near one hundred and twenty. It was declared a strong radiation storm in real time, and yet the catalog file skips from May 13 to September 9. ARTEMIS ions read about one thousand eight hundred times background.",
+   "evidence": {
+    "numbers": {
+     "window": [
+      "2024-01-10",
+      "2024-07-07"
+     ],
+     "episodes": {
+      "2024-03-15/18": "threshold",
+      "2024-05-09": "latency",
+      "2024-06-08/10": "curation"
+     },
+     "jun8_dose_ugy_day": 148004.3,
+     "artemis_ratio": [
+      3.34,
+      199,
+      1790
+     ]
+    },
+    "cycles": [
+     "run reports not available; figure data"
+    ],
+    "confirmed_by": [
+     "ARTEMIS in lunar orbit",
+     "GOES electrons"
+    ]
+   },
+   "standing": {
+    "status": "accepted",
+    "basis": "each episode confirmed by an independent spacecraft in lunar orbit",
+    "note": "not an edge in the model: three adjudicated anomalies; the surviving figure records the adjudication commits"
+   },
+   "certainty": {
+    "earned": null,
+    "note": "not a learned relationship"
+   },
+   "edge_refs": [],
+   "audience": "briefing"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "finding_id": "F3",
+   "kind": "learned",
+   "spoken": "The recovery pattern after proton events carries over from Mars. It was admitted in the second loop cycle in the magnetotail, at a partial correlation of about zero point five four, and in the sixth loop cycle in the solar wind, at about zero point two six. It learned a weight near the top of its range in both.",
+   "evidence": {
+    "numbers": {
+     "pcorr": {
+      "magnetotail": 0.5376,
+      "solar_wind": 0.2587
+     },
+     "weights": {
+      "magnetotail": 0.9991,
+      "solar_wind": 0.9991
+     }
+    },
+    "cycles": [
+     "v1 c2 (magnetotail)",
+     "v1 c6 (solar_wind)"
+    ],
+    "confirmed_by": []
+   },
+   "standing": {
+    "status": "accepted",
+    "basis": "admitted under the standing rule in version one: loop cycle two in the magnetotail, loop cycle six in the solar wind; admission statistics stored",
+    "note": null
+   },
+   "certainty": {
+    "earned": false,
+    "note": "set aside: versions one to three show certainty collapsing on every relationship; version four (lunar-fm) shows values at the ceiling, which a correct scale is not supposed to produce, and the scale rule is being worked out"
+   },
+   "edge_refs": [
+    {
+     "pod": "nm-usecases/lunar",
+     "edge_id": "F3_sep_recovery_t3|magnetotail#c3__surface_corrected_dose_rate__surface_corrected_dose_rate@magnetotail"
+    },
+    {
+     "pod": "nm-usecases/lunar",
+     "edge_id": "F3_sep_recovery_t3|solar_wind#c6__surface_corrected_dose_rate__surface_corrected_dose_rate@solar_wind"
+    }
+   ],
+   "audience": "briefing"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "finding_id": "F4",
+   "kind": "learned",
+   "spoken": "Deeper inside the magnetotail means higher dose. This was a lunar-native hypothesis with no Mars precedent, registered as a blind-recovery target. It was admitted at a partial correlation of about zero point two one and learned a weight of about plus zero point eight six.",
+   "evidence": {
+    "numbers": {
+     "pcorr": 0.2112,
+     "weight": 0.8606,
+     "fit_gain_pct": 0.144,
+     "v2": {
+      "pcorr": 0.2734,
+      "weight": 0.6305
+     }
+    },
+    "cycles": [
+     "v1 c6",
+     "v2 c4"
+    ],
+    "confirmed_by": []
+   },
+   "standing": {
+    "status": "accepted",
+    "basis": "registered as a blind-recovery target; admitted under the standing rule in loop cycle six of version one",
+    "note": "re-admitted in version two, loop cycle four"
+   },
+   "certainty": {
+    "earned": false,
+    "note": "set aside: versions one to three show certainty collapsing on every relationship; version four (lunar-fm) shows values at the ceiling, which a correct scale is not supposed to produce, and the scale rule is being worked out"
+   },
+   "edge_refs": [
+    {
+     "pod": "nm-usecases/lunar",
+     "edge_id": "tail_depth|magnetotail#c6__surface_corrected_dose_rate__surface_corrected_dose_rate@magnetotail"
+    },
+    {
+     "pod": "nm-usecases/lunar-native",
+     "edge_id": "tail_depth|magnetotail#l2c4__log_dose__log_dose@magnetotail"
+    }
+   ],
+   "audience": "briefing"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "finding_id": "F5",
+   "kind": "learned",
+   "spoken": "Storm hours and quiet hours need separate weights. In the fifth loop cycle a flux-linear form confirmed its first prediction, that the weight would sit at its ceiling, and failed its second: the fit gain was about four percent against a registered expectation of at least fifty. The measured ceiling was about eighteen-fold. The answer was a third version of the model with storm and quiet hours split, in which the same drivers were re-admitted.",
+   "evidence": {
+    "numbers": {
+     "ceiling_ratio_median": 18.47,
+     "fit_gain_pct": 3.9,
+     "fit_gain_expected_pct": 50
+    },
+    "cycles": [
+     "v1 c5",
+     "v3 seed"
+    ],
+    "confirmed_by": []
+   },
+   "standing": {
+    "status": "accepted",
+    "basis": "the flux-linear form confirmed its ceiling prediction and failed its fit-gain prediction in loop cycle five of version one; the storm-and-quiet split in version three re-admitted the same drivers",
+    "note": "one of two registered predictions failed; the split that followed is what is accepted"
+   },
+   "certainty": {
+    "earned": false,
+    "note": "set aside: versions one to three show certainty collapsing on every relationship; version four (lunar-fm) shows values at the ceiling, which a correct scale is not supposed to produce, and the scale rule is being worked out"
+   },
+   "edge_refs": [
+    {
+     "pod": "nm-usecases/lunar",
+     "edge_id": "F6_sep_flux_linear|solar_wind#c5__surface_corrected_dose_rate__surface_corrected_dose_rate@solar_wind"
+    },
+    {
+     "pod": "nm-usecases/lunar-regime",
+     "edge_id": "p10_log|flood__log_dose__log_dose@flood"
+    }
+   ],
+   "audience": "briefing"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "finding_id": "F6",
+   "kind": "learned",
+   "spoken": "Solar-wind speed in the magnetotail was admitted at the margin, a partial correlation of about zero point one one against a bar of zero point one zero, and learned a weight of about plus zero point six one.",
+   "evidence": {
+    "numbers": {
+     "pcorr": 0.1088,
+     "weight": 0.6093,
+     "fit_gain_pct": 0.049
+    },
+    "cycles": [
+     "v1 c7"
+    ],
+    "confirmed_by": []
+   },
+   "standing": {
+    "status": "accepted",
+    "basis": "admitted under the standing rule in loop cycle seven of version one, at the margin",
+    "note": "partial correlation 0.1088 against a bar of 0.10"
+   },
+   "certainty": {
+    "earned": false,
+    "note": "set aside: versions one to three show certainty collapsing on every relationship; version four (lunar-fm) shows values at the ceiling, which a correct scale is not supposed to produce, and the scale rule is being worked out"
+   },
+   "edge_refs": [
+    {
+     "pod": "nm-usecases/lunar",
+     "edge_id": "sw_speed|magnetotail#c7__surface_corrected_dose_rate__surface_corrected_dose_rate@magnetotail"
+    }
+   ],
+   "audience": "briefing"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "finding_id": "F7",
+   "kind": "ruled_out",
+   "spoken": "Two geomagnetic indices, ap and kp, were registered as controls in the solar wind: with no mechanism there, they were expected to learn nothing. They learned weight anyway. The kp index came out at about minus zero point three nine in the first version, and the control was re-registered and re-tested in the second and third versions, each time with the expectation that its weight would stay under zero point one zero. It did not: about minus zero point one six, then about minus zero point one three. The abstention prediction failed three times. What that means is still open: either the indices carry something real that the model has no name for, or the learning rule lets a driver with no mechanism absorb structure it should refuse.",
+   "evidence": {
+    "numbers": {
+     "kp_weight": {
+      "v1": -0.3914,
+      "v2": -0.1583,
+      "v3": -0.1318
+     },
+     "ap_weight_v1": 0.1096,
+     "abstention_bar": 0.1
+    },
+    "cycles": [
+     "v1 seed",
+     "v2 seed",
+     "v3 seed"
+    ],
+    "confirmed_by": []
+   },
+   "standing": {
+    "status": "refuted",
+    "basis": "registered as controls expected to abstain in the solar wind; learned weight in all three versions",
+    "note": "kp \u22120.39 (v1), \u22120.16 (v2, bar 0.10), \u22120.13 (v3, bar 0.10)"
+   },
+   "certainty": {
+    "earned": null,
+    "note": "not a learned relationship"
+   },
+   "edge_refs": [
+    {
+     "pod": "nm-usecases/lunar",
+     "edge_id": "kp_index|solar_wind__surface_corrected_dose_rate__surface_corrected_dose_rate@solar_wind"
+    },
+    {
+     "pod": "nm-usecases/lunar",
+     "edge_id": "ap|solar_wind__surface_corrected_dose_rate__surface_corrected_dose_rate@solar_wind"
+    },
+    {
+     "pod": "nm-usecases/lunar-native",
+     "edge_id": "kp_index|solar_wind__log_dose__log_dose@solar_wind"
+    },
+    {
+     "pod": "nm-usecases/lunar-regime",
+     "edge_id": "kp_index|quiet__log_dose__log_dose@quiet"
+    }
+   ],
+   "audience": "internal"
+  }
+ ],
+ "gaps": [
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "gap_id": "G1",
+   "title": "The magnetotail effect runs opposite to the textbook",
+   "status": "in_cycle",
+   "opened_cycle": "cycle record not available",
+   "priority": 3,
+   "history": [],
+   "closes_with": [
+    {
+     "what": "more days that are both in the magnetotail and stormy, which in practice means a surface or far-side stream",
+     "kind": "measurement",
+     "external": true,
+     "who_could_act": "a lunar surface or far-side instrument team"
+    }
+   ],
+   "spoken": "The magnetotail's effect on dose behaves opposite to the textbook expectation. Seventeen years of lunar-orbit data hold only forty-six days that were both in the magnetotail and stormy.",
+   "ask": {
+    "spoken": "More magnetotail storm days, which in practice means a surface or far-side stream."
+   },
+   "expected_signal": "enough days that are both inside the magnetotail and geomagnetically stormy, from a surface or far-side instrument, to re-test the sign",
+   "resolution_by": "none registered",
+   "audience": "briefing"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "gap_id": "G2",
+   "title": "Nothing is measured at the lunar surface",
+   "status": "immovable",
+   "opened_cycle": "cycle record not available",
+   "priority": 1,
+   "history": [],
+   "closes_with": [
+    {
+     "what": "access to the Chang'e-4 lander's dosimeter data from the far side",
+     "kind": "data_release",
+     "external": true,
+     "who_could_act": "whoever can negotiate a data-access agreement"
+    },
+    {
+     "what": "a dosimeter at the surface, read hourly",
+     "kind": "measurement",
+     "external": true,
+     "who_could_act": "the first rover or lander team"
+    }
+   ],
+   "spoken": "Everything in this record is from lunar orbit. The one long-running surface measurement exists, and archive access is blocked.",
+   "ask": {
+    "spoken": "Access to the Chang'e-4 lander's dosimeter data. One data-access agreement would open it."
+   },
+   "expected_signal": "an hourly surface dose series over at least one solar rotation, from the Chang'e-4 lander's dosimeter or a new lander",
+   "resolution_by": "none registered",
+   "audience": "briefing"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "gap_id": "G3",
+   "title": "Earth-side alerts miss events at the Moon",
+   "status": "in_cycle",
+   "opened_cycle": "cycle record not available",
+   "priority": 2,
+   "history": [],
+   "closes_with": [
+    {
+     "what": "a dose monitor in the lunar vicinity whose alerts do not wait on Earth's catalog",
+     "kind": "measurement",
+     "external": true,
+     "who_could_act": "an operator with a lunar-orbit or surface asset"
+    }
+   ],
+   "spoken": "Three episodes in the first half of 2024 were missing from the official catalog. Anyone operating near the Moon needs lunar-vicinity monitoring.",
+   "ask": {
+    "spoken": "A dose monitor near the Moon whose alerts do not wait on Earth's catalog."
+   },
+   "expected_signal": "a lunar-vicinity dose monitor whose alert times can be set against Earth's catalog over one season",
+   "resolution_by": "none registered",
+   "audience": "briefing"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "gap_id": "G4",
+   "title": "Crew transit dose to Mars has never been measured continuously",
+   "status": "immovable",
+   "opened_cycle": "cycle record not available",
+   "priority": 4,
+   "history": [],
+   "closes_with": [
+    {
+     "what": "a small hosted dosimeter on any Mars-bound flight, read hourly",
+     "kind": "measurement",
+     "external": true,
+     "who_could_act": "a rideshare provider"
+    }
+   ],
+   "spoken": "Background, not a result of this campaign: on the way to Mars there are four one-way snapshots in twenty-five years.",
+   "ask": {
+    "spoken": "A small hosted dosimeter on any Mars-bound flight."
+   },
+   "expected_signal": "a continuous hourly dose series from a spacecraft on a Mars-bound trajectory",
+   "resolution_by": "none registered",
+   "audience": "briefing"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "gap_id": "G5",
+   "title": "The run reports for this campaign are lost",
+   "status": "proposed",
+   "opened_cycle": "cycle record not available",
+   "priority": 5,
+   "history": [],
+   "closes_with": [
+    {
+     "what": "a surviving copy of the lunar run reports",
+     "kind": "data_release",
+     "external": false,
+     "who_could_act": "anyone holding a copy"
+    }
+   ],
+   "spoken": "The cycle-by-cycle run reports were lost with a laptop. This debrief is rebuilt from summaries, figures and the stored model records, which hold each relationship's cycle, admission statistic and registered prediction but not the reasoning text.",
+   "ask": {
+    "spoken": "If anyone holds a copy of the lunar run reports, the reasoning in each cycle can be restored."
+   },
+   "expected_signal": "a copy of the run reports",
+   "resolution_by": "none registered",
+   "audience": "internal"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "gap_id": "G6",
+   "title": "Certainty is set aside for this mission",
+   "status": "in_cycle",
+   "opened_cycle": "cycle record not available",
+   "priority": 6,
+   "history": [
+    {
+     "cycle": "versions one to three",
+     "hypothesis": "certainty collapses on every relationship, as at Mars",
+     "before_data": true,
+     "result": "collapsed"
+    },
+    {
+     "cycle": "version four",
+     "hypothesis": "a new scale",
+     "before_data": true,
+     "result": "several relationships at the ceiling of certainty, which a correct scale is not supposed to produce; not reported"
+    }
+   ],
+   "closes_with": [
+    {
+     "what": "re-run the lunar cycles under a settled scale rule",
+     "kind": "rerun",
+     "external": false,
+     "who_could_act": "Nervous Machine"
+    }
+   ],
+   "spoken": "Certainty is set aside for this mission. The first three versions show certainty collapsing on every relationship, as at Mars. The fourth version, under a new scale, shows several relationships at or near the ceiling of certainty. Those values are not reported, because a correct scale is not supposed to let certainty reach its ceiling, and the rule that sets the scale is being worked out.",
+   "ask": {
+    "spoken": "A re-run under a settled scale rule."
+   },
+   "expected_signal": "a rerun of the lunar cycles under the settled scale rule, with certainty values that neither collapse nor saturate",
+   "resolution_by": "none registered",
+   "audience": "internal"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "gap_id": "G7",
+   "title": "Registered controls learned weight in the solar wind",
+   "status": "in_cycle",
+   "opened_cycle": "v1 seed",
+   "priority": 7,
+   "history": [
+    {
+     "cycle": "version one",
+     "hypothesis": "ap and kp abstain outside the magnetotail",
+     "before_data": true,
+     "result": "kp learned about minus zero point three nine"
+    },
+    {
+     "cycle": "version two",
+     "hypothesis": "the same, with the weight expected under zero point one zero in the log basis",
+     "before_data": true,
+     "result": "about minus zero point one six"
+    },
+    {
+     "cycle": "version three",
+     "hypothesis": "the same, with storm hours removed",
+     "before_data": true,
+     "result": "about minus zero point one three"
+    }
+   ],
+   "closes_with": [
+    {
+     "what": "decide whether the indices carry an unnamed mechanism at the Moon, or the learning rule lets a driver with no mechanism absorb structure",
+     "kind": "decision",
+     "external": false,
+     "who_could_act": "Nervous Machine"
+    }
+   ],
+   "spoken": "Two geomagnetic indices registered as controls, expected to learn nothing in the solar wind, learned weight in three versions. Either they carry something real the model has no name for, or the learning rule lets a driver with no mechanism absorb structure it should refuse.",
+   "ask": {
+    "spoken": "A ruling on the control failure: unnamed mechanism, or a learning-rule weakness."
+   },
+   "expected_signal": "a ruling recorded as a cycle: unnamed mechanism, or learning-rule weakness",
+   "resolution_by": "none registered",
+   "audience": "internal"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "gap_id": "G8",
+   "title": "Do solar-wind structures seen at Mars reach the Moon?",
+   "status": "in_cycle",
+   "opened_cycle": 1,
+   "priority": 5,
+   "audience": "briefing",
+   "spoken": "Stream interfaces corotate with the Sun and last weeks, so a structure that hit Mars should meet Earth and the Moon some days earlier or later. One pre-registered test found June suggestive and February absent. The test needs repeating with a particle flag that catches decay tails.",
+   "history": [
+    {
+     "cycle": 1,
+     "hypothesis": "the two 2024 Mars arrivals reached the Moon at the corotation-predicted meetings",
+     "before_data": true,
+     "result": "February not seen; June met the rule at one meeting with a solar-particle tail in the baseline; suggestive, not strong"
+    }
+   ],
+   "closes_with": [
+    {
+     "what": "a second cycle (c2) under the amended particle flag written in the c1 report, on the public CRaTER and OMNI data, pre-registered first",
+     "kind": "rerun",
+     "external": true,
+     "who_could_act": "anyone; the data is public at PDS and SPDF and the rule is written"
+    }
+   ],
+   "expected_signal": "a c2 whose both base rates and the M3 statistic are printed; agreement with c1 at M3 under a clean baseline, or not",
+   "resolution_by": "none registered",
+   "ask": {
+    "spoken": "Run the second cycle. The rule fix is written down, the data is public, and the question is open: did June's structure really reach the Moon?"
+   }
+  }
+ ],
+ "anomalies": [
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "anomaly_id": "A1",
+   "when": "2024-03-15/18",
+   "node": "lunar_orbit_dose",
+   "spoken": "March 15 to 18, 2024: dose stayed at least four times normal for four days, peaking at about forty times, with nothing in the official catalog. Missed by threshold.",
+   "status": "confirmed",
+   "urgency": "daily",
+   "from_trusted_node": "unknown",
+   "evidence": {
+    "artemis_ratio": 3.34
+   },
+   "gap_id": "G3",
+   "alert": {
+    "sent": false
+   }
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "anomaly_id": "A2",
+   "when": "2024-05-09",
+   "node": "lunar_orbit_dose",
+   "spoken": "May 9, 2024: dose rose a full day before the catalog opened an event. Missed by latency.",
+   "status": "confirmed",
+   "urgency": "daily",
+   "from_trusted_node": "unknown",
+   "evidence": {
+    "artemis_ratio": 199
+   },
+   "gap_id": "G3",
+   "alert": {
+    "sent": false
+   }
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "anomaly_id": "A3",
+   "when": "2024-06-08/10",
+   "node": "lunar_orbit_dose",
+   "spoken": "June 8 to 10, 2024: the highest dose days of the window, declared a strong storm in real time and absent from the catalog file. Missed by curation.",
+   "status": "confirmed",
+   "urgency": "daily",
+   "from_trusted_node": "unknown",
+   "evidence": {
+    "artemis_ratio": 1790,
+    "dose_ugy_day": 148004.3
+   },
+   "gap_id": "G3",
+   "alert": {
+    "sent": false
+   }
+  }
+ ],
+ "background": [
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "term": "CRaTER",
+   "also_called": [],
+   "spoken": "The Cosmic Ray Telescope for the Effects of Radiation, an instrument on NASA's Lunar Reconnaissance Orbiter. It has measured dose in lunar orbit since 2009. It is a stack of detector pairs, which is why it can tell soft radiation from penetrating radiation.",
+   "source": "general"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "term": "ARTEMIS probes",
+   "also_called": [],
+   "spoken": "Two small NASA spacecraft in lunar orbit, originally part of the THEMIS mission. They measure particles and fields directly. Not the same thing as the Artemis crew programme.",
+   "source": "general"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "term": "The official catalog",
+   "also_called": [],
+   "spoken": "A list of solar proton events kept by the United States space weather service. An event enters it when protons above ten million electron volts, measured near Earth, exceed ten particle flux units. That line is the bottom of the S scale, called S one.",
+   "source": "general"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "term": "Magnetotail",
+   "also_called": [],
+   "spoken": "Earth's magnetic field is stretched by the solar wind into a long tail on the night side. The Moon passes through it for a few days around every full moon.",
+   "source": "general"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "term": "Galactic cosmic rays",
+   "also_called": [],
+   "spoken": "A steady drizzle of very energetic particles from outside the solar system. Published measurements from the Chang'e-4 lander put the dose equivalent on the lunar surface at about one point four millisieverts per day, compared with about zero point seven on Mars and about one point eight in transit.",
+   "source": "literature",
+   "citation": "Zhang et al. 2020 (Chang'e-4 LND); Hassler et al. 2014 (MSL/RAD); Zeitlin et al. 2013 (MSL/RAD cruise)"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "term": "Solar particle event",
+   "also_called": [],
+   "spoken": "A burst of fast particles from a flare or eruption. Violent and brief, and survivable in a shelter if there is warning.",
+   "source": "general"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "term": "Geomagnetic indices, ap and kp",
+   "also_called": [],
+   "spoken": "Daily and three-hourly measures of how disturbed Earth's magnetic field is, taken from ground stations. They describe conditions at Earth, not at the Moon.",
+   "source": "general"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "term": "Regolith",
+   "also_called": [],
+   "spoken": "Lunar soil. Piled over a habitat it is effective shielding.",
+   "source": "general"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "term": "Chang'e-4 and LND",
+   "also_called": [],
+   "spoken": "A Chinese lander on the lunar far side carrying a dosimeter called Lunar Lander Neutrons and Dosimetry. It is the only long-running dose measurement on the lunar surface.",
+   "source": "general"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "debrief-ledger-build",
+   "created_at": "2026-10-07T00:00:00Z",
+   "mission_id": "lunar-orbit-2026-08",
+   "pod": "nm-usecases/lunar",
+   "provenance": {
+    "source": "reconstructed: published summaries, two published figures with data, stored model records (August 2026)"
+   },
+   "term": "EVA",
+   "also_called": [],
+   "spoken": "Work outside the habitat in a suit.",
+   "source": "general"
+  }
+ ],
+ "sessions": []
+}

@@ -572,10 +572,10 @@
    "history": [],
    "closes_with": [
     {
-     "what": "access to the Chang'e-4 lander's dosimeter data from the far side",
+     "what": "the Chang'e-4 lander's dosimeter series from the far side, as a data cycle under the instrument team's name and terms",
      "kind": "data_release",
      "external": true,
-     "who_could_act": "whoever can negotiate a data-access agreement"
+     "who_could_act": "the instrument team that holds the data"
     },
     {
      "what": "a dosimeter at the surface, read hourly",
@@ -584,9 +584,9 @@
      "who_could_act": "the first rover or lander team"
     }
    ],
-   "spoken": "Everything in this record is from lunar orbit. The one long-running surface measurement exists, and archive access is blocked.",
+   "spoken": "Everything in this record is from lunar orbit. The one long-running surface measurement exists, and its data is not yet in this record.",
    "ask": {
-    "spoken": "Access to the Chang'e-4 lander's dosimeter data. One data-access agreement would open it."
+    "spoken": "The Chang'e-4 lander's dosimeter series, as a data cycle under the instrument team's name and terms."
    },
    "expected_signal": "an hourly surface dose series over at least one solar rotation, from the Chang'e-4 lander's dosimeter or a new lander",
    "resolution_by": "none registered",

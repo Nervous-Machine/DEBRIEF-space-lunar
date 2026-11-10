@@ -8,7 +8,7 @@ body:
     attributes:
       label: Mission repository and gap id
       description: The gap numbers are in ASKS.md.
-      placeholder: DEBRIEF-space-lunar, gap 1
+      placeholder: DEBRIEF-space-lunar, gap 1 (G2)
     validations:
       required: true
   - type: input

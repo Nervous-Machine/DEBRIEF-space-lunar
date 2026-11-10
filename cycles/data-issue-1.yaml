@@ -1,0 +1,19 @@
+# data cycle from issue #1; answers copied verbatim; terms to be confirmed with the supplier before merge
+kind: data
+cycle: "data-1"
+dated: "2026-11-10"
+by: "Test Supplier (path test by the maintainer; not a real contribution)"
+github: "heidiEC"
+institution: "none; test"
+licence: "test only; no data"
+dataset: "No dataset. This issue exercises the form-to-cycle path end to end before the first real contributor uses it. It will be closed without merge."
+addresses_gap: "DEBRIEF-space-lunar, gap 1 (G2)"
+preregistered:
+  question: "What the data allows: No dataset."
+  rule: "Nothing. Close the pull request after checking that validation passed on it.\n\n\n(edited once to re-run the workflow after the validation step was added)"
+  before_data: true
+outcome:
+  verdict: admitted
+spoken: "A dataset arrived from Test Supplier (path test by the maintainer; not a real contribution)."
+finding_ids: []
+gap_ids: ["G2"]
